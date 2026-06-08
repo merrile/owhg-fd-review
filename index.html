@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Father's Day Campaign Review — Jack White 4 Wood | OWHG</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,500&family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1c2117;--paper:#f3eddd;--card:#fffaf0;--brass:#a9802f;--brass-d:#7d5e1f;--green:#2f4a35;--oxblood:#7a2a1f;--line:#dcceac;--muted:#6a6552}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .serif{font-family:'Fraunces',serif}
+  a{color:var(--brass-d)}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+
+  header.hd{background:var(--ink);color:var(--paper);padding:40px 0 36px}
+  header.hd .tag{font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.7rem;color:#d8b46b;margin-bottom:14px}
+  header.hd h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1.02;letter-spacing:-.01em}
+  header.hd p{color:#ccc3ac;margin-top:12px;max-width:60ch}
+  .draftpill{display:inline-block;margin-top:18px;background:var(--oxblood);color:var(--paper);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.62rem;padding:6px 12px;border-radius:2px}
+
+  section{padding:clamp(34px,5vw,56px) 0;border-bottom:1px solid var(--line)}
+  .ey{font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:.68rem;color:var(--brass-d);margin-bottom:10px}
+  h2.s{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:6px}
+  .lead{color:var(--muted);max-width:64ch;margin-bottom:26px}
+
+  .offer{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+  .offer .b{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:18px 20px}
+  .offer .b small{font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.6rem;color:var(--muted);display:block;margin-bottom:6px}
+  .offer .b b{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600}
+  .offer .b.flag b{color:var(--oxblood)}
+
+  .ads{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:8px}
+  .adcard{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .adcard .cap{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line)}
+  .adcard .cap b{font-family:'Fraunces',serif;font-size:1.05rem}
+  .adcard .cap span{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff;background:var(--green);padding:3px 9px;border-radius:2px}
+  .adcard .cap span.alt{background:var(--brass-d)}
+  .adcard img{width:100%}
+  .adcard .row2{display:grid;grid-template-columns:1.4fr 1fr;gap:0;background:var(--line)}
+  .adcard .row2 img{background:#000}
+
+  .pages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+  .pg{display:block;background:var(--ink);color:var(--paper);border-radius:6px;padding:22px;text-decoration:none;transition:transform .2s}
+  .pg:hover{transform:translateY(-3px)}
+  .pg b{font-family:'Fraunces',serif;font-size:1.2rem;display:block;margin-bottom:6px;color:var(--paper)}
+  .pg span{font-size:.82rem;color:#c9bfa6}
+  .pg .go{margin-top:14px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.64rem;color:#d8b46b}
+  .pg.primary{background:var(--green)}
+
+  .copywrap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+  .cp{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px}
+  .cp .h{font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.62rem;color:var(--brass-d);margin-bottom:12px;display:flex;justify-content:space-between}
+  .cp .h .pick{background:var(--green);color:#fff;padding:2px 8px;border-radius:2px;letter-spacing:.08em}
+  .cp p{font-size:.92rem;margin-bottom:10px}
+  .cp p:last-child{margin-bottom:0}
+
+  .decide{background:#fff6e6;border:1px solid #e7cf9a;border-radius:8px;padding:26px 28px}
+  .decide h3{font-family:'Fraunces',serif;font-size:1.3rem;margin-bottom:4px}
+  .decide ol{margin:14px 0 0 0;padding-left:0;list-style:none;counter-reset:d}
+  .decide li{counter-increment:d;position:relative;padding:14px 0 14px 44px;border-top:1px solid #ecdcb6}
+  .decide li:first-of-type{border-top:0}
+  .decide li::before{content:counter(d);position:absolute;left:0;top:12px;width:28px;height:28px;background:var(--oxblood);color:#fff;border-radius:50%;display:grid;place-content:center;font-weight:700;font-size:.8rem}
+  .decide li b{font-family:'Fraunces',serif}
+  .decide li.price{background:#fdeede;margin:0 -14px;padding-left:58px;border-radius:4px}
+  .decide li.price::before{left:14px}
+
+  footer{padding:30px 0 50px;color:var(--muted);font-size:.8rem}
+  @media(max-width:820px){.offer{grid-template-columns:1fr 1fr}.ads{grid-template-columns:1fr}.pages,.copywrap{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="wrap">
+    <div class="tag">Old World Hickory · Campaign Review</div>
+    <h1 class="serif">Father's Day — Jack White 4 Wood</h1>
+    <p>One-of-one playable hickory 4 wood, built on a genuine Jack White clubhead (Sunningdale's first head pro, the 1904 Open Champion). Everything below is the proposed Father's Day push: landing page, Facebook ad creative, and the copy. Nothing is live.</p>
+    <span class="draftpill">● Draft for review — not published</span>
+  </div>
+</header>
+
+<!-- OFFER -->
+<section>
+  <div class="wrap">
+    <div class="ey">The offer</div>
+    <h2 class="s">$340, free U.S. shipping, in time for the 21st</h2>
+    <div class="offer">
+      <div class="b"><small>Price</small><b>$340</b></div>
+      <div class="b"><small>Shipping</small><b>Free (U.S.)</b></div>
+      <div class="b"><small>Inventory</small><b>1 of 1</b></div>
+      <div class="b flag"><small>Order by</small><b>Tue, Jun 16</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- AD CREATIVE -->
+<section>
+  <div class="wrap">
+    <div class="ey">Facebook ad creative</div>
+    <h2 class="s">Two directions to A/B test</h2>
+    <p class="lead">Same offer, two looks. Lifestyle uses the real club cut out and placed over a golden-hour course scene. Studio is the straight product photo. Each is built at 4:5 (feed) and 1:1 (square).</p>
+    <div class="ads">
+      <div class="adcard">
+        <div class="cap"><b>Lifestyle</b><span>Recommended for cold feed</span></div>
+        <div class="row2">
+          <img src="ad-lifestyle-4x5.png" alt="Lifestyle ad 4:5">
+          <img src="ad-lifestyle-1x1.png" alt="Lifestyle ad 1:1">
+        </div>
+      </div>
+      <div class="adcard">
+        <div class="cap"><b>Studio</b><span class="alt">Collector / warm traffic</span></div>
+        <div class="row2">
+          <img src="ad-4x5.png" alt="Studio ad 4:5">
+          <img src="ad-1x1.png" alt="Studio ad 1:1">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANDING PAGES -->
+<section>
+  <div class="wrap">
+    <div class="ey">Where the ad clicks through</div>
+    <h2 class="s">Landing pages</h2>
+    <p class="lead">The ad should point at the Father's Day page (does the full sell). The other two are the evergreen versions we built first, for reference.</p>
+    <div class="pages">
+      <a class="pg primary" href="jack-white-4-wood-fathers-day.html">
+        <b>Father's Day page</b>
+        <span>Gift framing, free shipping, order-by deadline. This is the ad's destination.</span>
+        <div class="go">Open →</div>
+      </a>
+      <a class="pg" href="jack-white-4-wood.html">
+        <b>Evergreen A — Heritage</b>
+        <span>Dark, story-first. The premium/collector version.</span>
+        <div class="go">Open →</div>
+      </a>
+      <a class="pg" href="jack-white-4-wood-variant-b.html">
+        <b>Evergreen B — Performance</b>
+        <span>Light, playability-first. For the younger competitive golfer.</span>
+        <div class="go">Open →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- COPY -->
+<section>
+  <div class="wrap">
+    <div class="ey">Ad copy</div>
+    <h2 class="s">Three caption options</h2>
+    <div class="copywrap">
+      <div class="cp">
+        <div class="h"><span>A · Gift hook</span><span class="pick">Lead</span></div>
+        <p>Some Father's Day gifts get a polite thanks. This one gets played.</p>
+        <p>It's a hickory 4 wood built on a real Jack White clubhead. Sunningdale's first head pro and the 1904 Open Champion. The kind of maker Bobby Jones trusted with his own driver.</p>
+        <p>Only one exists. Free U.S. shipping for Father's Day, and there's still time to put it in his hands by the 21st.</p>
+        <p>$340. When it sells, there isn't another.</p>
+      </div>
+      <div class="cp">
+        <div class="h"><span>B · Playability</span></div>
+        <p>Hickory isn't a costume. It's a harder, more honest game, and this is the club to play it with.</p>
+        <p>A 4 wood built on a genuine Jack White clubhead, the 1904 Open Champion. Real 20° loft, stiff hickory shaft, set to play. Tee it, hit it off the deck, work it into a breeze.</p>
+        <p>One of one. Free shipping for Father's Day if you order by June 16. $340.</p>
+      </div>
+      <div class="cp">
+        <div class="h"><span>C · Short</span></div>
+        <p>The Father's Day gift he'll actually play. A one-of-one hickory 4 wood from a 1904 Open Champion's bench.</p>
+        <p>$340, free U.S. shipping. Order by June 16 to make it in time.</p>
+        <p style="color:var(--muted);font-size:.82rem"><b>Headline:</b> The Father's Day Gift He'll Play<br><b>CTA button:</b> Shop Now</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Old World Hickory · campaign review · draft, nothing published yet.</div>
+</footer>
+
+</body>
+</html>

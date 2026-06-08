@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jack White 4 Wood — One Club. One Champion. One Left. | Old World Hickory</title>
+<meta name="description" content="A playable hickory golf 4 wood built on a genuine Jack White clubhead. Sunningdale's first head pro and the 1904 Open Champion. One of one, $340. When it sells, there isn't another.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#13160f;
+    --ink-2:#1c2117;
+    --paper:#ece2cd;
+    --paper-2:#ded2b6;
+    --brass:#b48a3f;
+    --brass-lt:#d8b46b;
+    --moss:#3f4a2e;
+    --oxblood:#74271f;
+    --line:rgba(180,138,63,.28);
+    --shadow:0 30px 70px -30px rgba(0,0,0,.7);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Spectral',Georgia,serif;
+    font-weight:400;
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* aged paper grain overlay */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode:overlay;
+  }
+  ::selection{background:var(--brass);color:var(--ink)}
+
+  .display{font-family:'Fraunces',serif;font-weight:600;line-height:.98;letter-spacing:-.015em}
+  .label{font-family:'Archivo',sans-serif;text-transform:uppercase;letter-spacing:.24em;font-size:.7rem;font-weight:600;color:var(--brass-lt)}
+
+  a{color:inherit}
+  img{display:block;max-width:100%}
+
+  /* ===== sticky buy bar — persistent CTA, the conversion backbone ===== */
+  .topbar{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px clamp(18px,4vw,48px);
+    background:linear-gradient(180deg,rgba(19,22,15,.96),rgba(19,22,15,.78));
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transform:translateY(-100%);transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  }
+  .topbar.show{transform:translateY(0)}
+  .topbar .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;letter-spacing:.02em}
+  .topbar .brand span{color:var(--brass-lt)}
+  .topbar .right{display:flex;align-items:center;gap:18px}
+  .topbar .price{font-family:'Fraunces',serif;font-size:1.1rem}
+  .topbar .stock{font-family:'Archivo',sans-serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--oxblood);background:rgba(116,39,31,.12);border:1px solid rgba(116,39,31,.4);padding:4px 9px;border-radius:2px}
+
+  .btn{
+    font-family:'Archivo',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;
+    padding:14px 26px;border-radius:2px;border:1px solid var(--brass);
+    background:var(--brass);color:var(--ink);cursor:pointer;text-decoration:none;
+    display:inline-flex;align-items:center;gap:10px;
+    transition:all .35s cubic-bezier(.2,.8,.2,1);white-space:nowrap;
+  }
+  .btn:hover{background:var(--brass-lt);border-color:var(--brass-lt);transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(180,138,63,.7)}
+  .btn.ghost{background:transparent;color:var(--paper);border-color:var(--line)}
+  .btn.ghost:hover{background:rgba(180,138,63,.08);color:var(--brass-lt);box-shadow:none;border-color:var(--brass)}
+  .btn .arr{transition:transform .35s}
+  .btn:hover .arr{transform:translateX(4px)}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,48px)}
+
+  /* ===== HERO ===== */
+  .hero{position:relative;min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(24px,4vw,72px);padding:120px clamp(18px,4vw,48px) 80px;max-width:1280px;margin:0 auto}
+  .hero::after{content:"";position:absolute;top:-20%;right:-15%;width:60vw;height:60vw;background:radial-gradient(circle,rgba(63,74,46,.55),transparent 65%);z-index:-1;filter:blur(20px)}
+  .hero-copy .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+  .hero-copy .eyebrow .rule{height:1px;width:46px;background:var(--brass)}
+  .hero h1{font-size:clamp(2.9rem,6.4vw,5.6rem);margin-bottom:24px}
+  .hero h1 em{font-style:italic;color:var(--brass-lt);font-weight:500}
+  .hero .lede{font-size:clamp(1.05rem,1.5vw,1.28rem);max-width:30ch;color:var(--paper-2);margin-bottom:36px}
+  .hero .priceline{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}
+  .hero .priceline .amt{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:600}
+  .hero .priceline .meta{font-family:'Archivo',sans-serif;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-lt)}
+  .hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+  .hero .reassure{font-size:.92rem;color:var(--paper-2);display:flex;gap:18px;flex-wrap:wrap}
+  .hero .reassure span{display:inline-flex;align-items:center;gap:7px}
+  .hero .reassure .dot{width:5px;height:5px;border-radius:50%;background:var(--brass);display:inline-block}
+
+  .hero-art{position:relative}
+  .hero-art .frame{position:relative;border:1px solid var(--line);padding:14px;background:linear-gradient(160deg,rgba(236,226,205,.04),transparent);box-shadow:var(--shadow)}
+  .hero-art .frame img{width:100%;height:560px;object-fit:cover;filter:saturate(1.02) contrast(1.03)}
+  .hero-art .oneofone{position:absolute;top:-26px;left:-26px;width:120px;height:120px;border-radius:50%;background:var(--oxblood);color:var(--paper);display:grid;place-content:center;text-align:center;line-height:1.15;font-family:'Fraunces',serif;transform:rotate(-9deg);box-shadow:var(--shadow);z-index:3}
+  .hero-art .oneofone b{font-size:2rem;display:block;font-weight:600}
+  .hero-art .oneofone small{font-family:'Archivo',sans-serif;font-size:.52rem;letter-spacing:.22em;text-transform:uppercase}
+  .scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-family:'Archivo',sans-serif;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--brass-lt);opacity:.7;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+  /* ===== trust strip ===== */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink-2)}
+  .trust .row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+  .trust .cell{background:var(--ink-2);padding:28px clamp(14px,2.4vw,30px);text-align:center}
+  .trust .cell b{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;color:var(--brass-lt);display:block;margin-bottom:5px}
+  .trust .cell p{font-family:'Archivo',sans-serif;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-2)}
+
+  section{padding:clamp(70px,9vw,130px) 0}
+  .sec-head{max-width:62ch;margin-bottom:54px}
+  .sec-head h2{font-size:clamp(2.1rem,4.4vw,3.6rem);margin:18px 0 18px}
+  .sec-head p{font-size:1.12rem;color:var(--paper-2)}
+
+  /* ===== story ===== */
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,70px);align-items:center}
+  .story-grid.flip{direction:rtl}
+  .story-grid.flip>*{direction:ltr}
+  .story-img{position:relative;border:1px solid var(--line);padding:12px;box-shadow:var(--shadow)}
+  .story-img img{width:100%;height:440px;object-fit:cover}
+  .story-img figcaption{font-family:'Archivo',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-lt);padding:12px 4px 2px}
+  .story-text h3{font-family:'Fraunces',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:600;margin-bottom:20px;line-height:1.05}
+  .story-text p{font-size:1.08rem;color:var(--paper-2);margin-bottom:18px}
+  .story-text .pull{font-family:'Fraunces',serif;font-style:italic;font-size:1.5rem;color:var(--paper);border-left:2px solid var(--brass);padding-left:22px;margin:26px 0;line-height:1.3}
+
+  /* ===== specs ===== */
+  .specs-sec{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .spec{background:var(--ink-2);padding:30px 28px}
+  .spec .label{margin-bottom:10px;display:block}
+  .spec b{font-family:'Fraunces',serif;font-size:1.9rem;font-weight:600}
+  .spec span{color:var(--paper-2);font-size:.95rem}
+
+  /* ===== dual use (play it or hang it) ===== */
+  .dual{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .dual .card{position:relative;overflow:hidden;border:1px solid var(--line);min-height:420px;display:flex;flex-direction:column;justify-content:flex-end;padding:38px}
+  .dual .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:brightness(.55) saturate(1.05)}
+  .dual .card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent,rgba(19,22,15,.92))}
+  .dual .card h3{font-family:'Fraunces',serif;font-size:2rem;font-weight:600;margin-bottom:12px}
+  .dual .card p{color:var(--paper-2)}
+  .dual .card .label{margin-bottom:14px}
+
+  /* ===== guarantee ===== */
+  .guarantee{text-align:center;max-width:760px;margin:0 auto}
+  .guarantee .seal{width:84px;height:84px;margin:0 auto 28px;border:2px solid var(--brass);border-radius:50%;display:grid;place-content:center;font-family:'Fraunces',serif;font-size:2rem;color:var(--brass-lt);transform:rotate(-6deg)}
+  .guarantee h2{font-size:clamp(1.9rem,3.6vw,2.9rem);margin-bottom:22px}
+  .guarantee p{font-size:1.14rem;color:var(--paper-2)}
+
+  /* ===== faq ===== */
+  .faq-list{max-width:820px;margin:0 auto;border-top:1px solid var(--line)}
+  details{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer;list-style:none;padding:26px 4px;font-family:'Fraunces',serif;font-size:1.25rem;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:20px;transition:color .3s}
+  summary:hover{color:var(--brass-lt)}
+  summary::-webkit-details-marker{display:none}
+  summary .ic{font-family:'Archivo',sans-serif;font-size:1.5rem;color:var(--brass);transition:transform .35s;flex-shrink:0}
+  details[open] summary .ic{transform:rotate(45deg)}
+  details .ans{padding:0 4px 28px;color:var(--paper-2);font-size:1.04rem;max-width:68ch}
+
+  /* ===== final cta ===== */
+  .final{position:relative;text-align:center;overflow:hidden;border-top:1px solid var(--line)}
+  .final::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 120%,rgba(63,74,46,.7),transparent 60%);z-index:-1}
+  .final .label{justify-content:center;display:block;margin-bottom:20px}
+  .final h2{font-size:clamp(2.4rem,6vw,5rem);margin-bottom:24px;max-width:16ch;margin-inline:auto}
+  .final h2 em{font-style:italic;color:var(--brass-lt)}
+  .final .price-big{font-family:'Fraunces',serif;font-size:3rem;font-weight:600;margin-bottom:8px}
+  .final .urg{font-family:'Archivo',sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oxblood);margin-bottom:36px}
+  .final .ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+  footer{border-top:1px solid var(--line);padding:44px 0;text-align:center;background:var(--ink-2)}
+  footer .brand{font-family:'Fraunces',serif;font-size:1.3rem;margin-bottom:10px}
+  footer .brand span{color:var(--brass-lt)}
+  footer p{font-size:.86rem;color:var(--paper-2);max-width:54ch;margin:0 auto 6px}
+  footer .fine{font-family:'Archivo',sans-serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(236,226,205,.4);margin-top:18px}
+
+  /* reveal animation — only hide when JS is present (no-JS / crawlers see content) */
+  .js .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  /* screenshot mode: ?shot — flatten hero height, show everything */
+  .shot .hero{min-height:auto}
+  .shot .reveal{opacity:1!important;transform:none!important}
+  .shot .scrollcue{display:none}
+
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;padding-top:108px}
+    .hero-art{order:-1}
+    .hero-art .frame img{height:420px}
+    .story-grid,.story-grid.flip{grid-template-columns:1fr;direction:ltr}
+    .dual{grid-template-columns:1fr}
+    .specs{grid-template-columns:1fr 1fr}
+    .trust .row{grid-template-columns:1fr 1fr}
+    .topbar .brand{font-size:.92rem}
+    .topbar .stock{display:none}
+  }
+  @media(max-width:520px){
+    .specs{grid-template-columns:1fr}
+    .trust .row{grid-template-columns:1fr 1fr}
+    .topbar .price{display:none}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"Jack White Retro-Fit 4 Wood — Playable Hickory Golf Club",
+  "image":[
+    "https://cdn.shopify.com/s/files/1/0983/1868/0386/files/jack-white-0-image0.jpg?v=1777437201",
+    "https://cdn.shopify.com/s/files/1/0983/1868/0386/files/jack-white-1-image1.jpg?v=1777437201"
+  ],
+  "description":"A playable hickory golf 4 wood built on a genuine Jack White clubhead. Jack White was Sunningdale's first head professional and the 1904 Open Champion. Retro-fit with a stiff hickory shaft, 20 degree loft, 41.5 inch length, D5 swing weight, right-handed. One of one.",
+  "brand":{"@type":"Brand","name":"Old World Hickory"},
+  "sku":"jack-white-retro-fit-4-wood",
+  "itemCondition":"https://schema.org/UsedCondition",
+  "offers":{
+    "@type":"Offer",
+    "url":"https://oldworldhickorygolf.com/products/jack-white-retro-fit-4-wood-hickory-golf",
+    "priceCurrency":"USD",
+    "price":"340.00",
+    "availability":"https://schema.org/InStock",
+    "itemCondition":"https://schema.org/UsedCondition"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is this a real Jack White club or a reproduction?","acceptedAnswer":{"@type":"Answer","text":"The clubhead is a genuine Jack White piece from his Sunningdale clubmaking work. It is retro-fit with a new stiff hickory shaft so it is playable today: authentic head, fresh shaft, honestly described. Not a modern replica."}},
+    {"@type":"Question","name":"Can I actually play with it, or is it display-only?","acceptedAnswer":{"@type":"Answer","text":"You can play it. It is set to a true D5 swing weight, 20 degree loft, and 41.5 inch length, legal and ready for hickory-golf rounds and societies. Many buyers play a few rounds, then display it."}},
+    {"@type":"Question","name":"There is only one. What happens when it sells?","acceptedAnswer":{"@type":"Answer","text":"Then it is gone. This is a one-of-one club and we do not restock individual heads like this. When the page says sold, there is not another one waiting."}},
+    {"@type":"Question","name":"How does it ship, and how fast?","acceptedAnswer":{"@type":"Answer","text":"It ships fully protected within 2 to 3 business days, free within the United States. Hickory clubs are packed to protect the shaft in transit."}},
+    {"@type":"Question","name":"Who is behind Old World Hickory?","acceptedAnswer":{"@type":"Answer","text":"A small American shop that sources and builds playable hickory clubs by hand. Every piece is worked and described by the same hands that ship it."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- persistent buy bar -->
+<div class="topbar" id="topbar">
+  <div class="brand">Old World <span>Hickory</span></div>
+  <div class="right">
+    <span class="stock">Only 1 made</span>
+    <span class="price">$340</span>
+    <a class="btn" href="https://oldworldhickorygolf.com/products/jack-white-retro-fit-4-wood-hickory-golf">Claim it <span class="arr">→</span></a>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="rule"></span><span class="label">Hickory Woods · 1 of 1</span></div>
+    <h1 class="display">From a Champion's Bench<br>to <em>your</em> bag.</h1>
+    <p class="lede">A playable hickory 4 wood built on a genuine Jack White clubhead. Sunningdale's first head pro. The 1904 Open Champion. One was made. One remains.</p>
+    <div class="priceline">
+      <span class="amt">$340</span>
+      <span class="meta">Free U.S. shipping · Single club, no set</span>
+    </div>
+    <div class="ctas">
+      <a class="btn" href="https://oldworldhickorygolf.com/products/jack-white-retro-fit-4-wood-hickory-golf">Claim this club <span class="arr">→</span></a>
+      <a class="btn ghost" href="#story">Read its story</a>
+    </div>
+    <div class="reassure">
+      <span><span class="dot"></span>Tournament-legal hickory</span>
+      <span><span class="dot"></span>Authenticity guaranteed</span>
+      <span><span class="dot"></span>Ships in 2–3 days</span>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="oneofone"><b>1</b><small>of one</small></div>
+    <div class="frame">
+      <img src="https://cdn.shopify.com/s/files/1/0983/1868/0386/files/jack-white-0-image0.jpg?v=1777437201" alt="Jack White playable hickory golf 4 wood, full club with persimmon head and hickory shaft">
+    </div>
+  </div>
+  <div class="scrollcue">Scroll</div>
+</header>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="wrap">
+    <div class="row">
+      <div class="cell"><b>1904</b><p>Open Champion</p></div>
+      <div class="cell"><b>1873–1949</b><p>Jack White, Sunningdale</p></div>
+      <div class="cell"><b>20°</b><p>Loft · 41½″ · D5</p></div>
+      <div class="cell"><b>1 / 1</b><p>None other exists</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- STORY -->
+<section id="story">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">The provenance</span>
+      <h2 class="display">The man Bobby Jones trusted with his driver.</h2>
+      <p>This isn't a replica or a tribute. It's a fairway wood built around a real clubhead from the workshop of one of the early game's most respected hands.</p>
+    </div>
+
+    <div class="story-grid reveal">
+      <figure class="story-img">
+        <img src="https://cdn.shopify.com/s/files/1/0983/1868/0386/files/jack-white-1-image1.jpg?v=1777437201" alt="Original Jack White hickory golf clubhead detail with maker's stamp">
+        <figcaption>The head. Original Jack White, Sunningdale</figcaption>
+      </figure>
+      <div class="story-text">
+        <h3>Sunningdale's first head pro. The 1904 Open Champion.</h3>
+        <p>Jack White took the head professional post at Sunningdale in 1901, then won The Open at Royal St George's in 1904. But it was at the bench, not just on the links, that he made his name. A clubmaker whose work outlasted his playing record.</p>
+        <p class="pull">"Bobby Jones played a Jack White-built driver his whole career. He called it <em>Jeanie Deans</em>."</p>
+        <p>When the greatest amateur the game has known reaches for your work first, that's a reputation you can hold in your hands. This 4 wood carries the same maker's mark.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 2 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="story-grid flip reveal">
+      <figure class="story-img">
+        <img src="https://cdn.shopify.com/s/files/1/0983/1868/0386/files/jack-white-3-image3.jpg?v=1777437201" alt="Stiff hickory shaft and grip on the Jack White 4 wood golf club">
+        <figcaption>Stiff hickory shaft · D5 swing weight</figcaption>
+      </figure>
+      <div class="story-text">
+        <h3>Retro-fit means it's built to be <em>played</em>, not babied.</h3>
+        <p>We paired the original head with a fresh, stiff hickory shaft and set it to a true D5 swing weight. The result is a 41½-inch, 20-degree fairway wood that comes off the deck low and hot, with the heft you feel through impact and the kind of feedback a hickory league rewards.</p>
+        <p>Hit it off the deck on a links afternoon. Then hang it on the wall when you're done. Either way, you own a piece nobody else can. There is exactly one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="specs-sec">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:42px">
+      <span class="label">By the numbers</span>
+      <h2 class="display" style="font-size:clamp(1.8rem,3.4vw,2.6rem)">Honest specs. No guesswork.</h2>
+    </div>
+    <div class="specs reveal">
+      <div class="spec"><span class="label">Club</span><b>4 Wood</b><span>Retro-fit fairway</span></div>
+      <div class="spec"><span class="label">Loft</span><b>20°</b><span>True fairway loft</span></div>
+      <div class="spec"><span class="label">Length</span><b>41½″</b><span>Standard wood length</span></div>
+      <div class="spec"><span class="label">Shaft</span><b>Hickory</b><span>Stiff flex</span></div>
+      <div class="spec"><span class="label">Swing weight</span><b>D5</b><span>Solid, players' feel</span></div>
+      <div class="spec"><span class="label">Hand</span><b>Right</b><span>Right-handed</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DUAL USE -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">Two ways to own it</span>
+      <h2 class="display">Play it, or hang it. Most do both.</h2>
+    </div>
+    <div class="dual reveal">
+      <div class="card">
+        <img src="https://cdn.shopify.com/s/files/1/0983/1868/0386/files/jack-white-4-image4.jpg?v=1777437201" alt="Jack White hickory golf 4 wood ready for tournament play">
+        <span class="label">On the course</span>
+        <h3>A gamer, not a relic</h3>
+        <p>Legal for hickory play and set to real specs. Tee it on a par 5, hit it off the deck, shape it into a breeze. This is a club for the round, not a mantelpiece imitation.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn.shopify.com/s/files/1/0983/1868/0386/files/jack-white-5-image5.jpg?v=1777437201" alt="Jack White vintage hickory golf club displayed as wall decor">
+        <span class="label">On the wall</span>
+        <h3>A conversation you'll have for years</h3>
+        <p>A 1904 Open Champion's mark, framed in your study or pro shop. The story sells itself every time someone asks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE / RISK REVERSAL -->
+<section class="specs-sec">
+  <div class="wrap">
+    <div class="guarantee reveal">
+      <div class="seal">✓</div>
+      <span class="label" style="display:block;margin-bottom:18px">Buy with zero doubt</span>
+      <h2 class="display">If it isn't everything we said, it comes back.</h2>
+      <p>Every club is inspected and described honestly by the hands that built it. Authenticity guaranteed, condition disclosed, no surprises. If your Jack White 4 wood arrives and it's not what you expected, send it back and we'll make it right. The story is real. The risk is ours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
+      <span class="label">Before you ask</span>
+      <h2 class="display">The honest answers.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details open>
+        <summary>Is this a real Jack White club or a reproduction? <span class="ic">+</span></summary>
+        <div class="ans">The clubhead is a genuine Jack White piece from his Sunningdale clubmaking work. We've retro-fit it with a new stiff hickory shaft so it's playable today. Authentic head, fresh shaft, honestly described. Not a modern replica.</div>
+      </details>
+      <details>
+        <summary>Can I actually play with it, or is it display-only? <span class="ic">+</span></summary>
+        <div class="ans">You can play it. It's set to a true D5 swing weight, 20° loft, 41½″ length, legal and ready for hickory-golf rounds and societies. Plenty of buyers play a few rounds, then display it. It holds up to both.</div>
+      </details>
+      <details>
+        <summary>There's only one. What happens when it sells? <span class="ic">+</span></summary>
+        <div class="ans">Then it's gone. This is a one-of-one club, and we don't restock individual heads like this. If you're on the fence, that's the honest pressure. When the page says sold, there isn't another one waiting in the back.</div>
+      </details>
+      <details>
+        <summary>How does it ship, and how fast? <span class="ic">+</span></summary>
+        <div class="ans">It ships fully protected within 2–3 business days, free within the U.S. We pack hickory clubs to survive the trip. The shaft is the priority.</div>
+      </details>
+      <details>
+        <summary>Who's behind Old World Hickory? <span class="ic">+</span></summary>
+        <div class="ans">A small American shop that sources and builds playable hickory clubs by hand. Real people, real benches, real clubs. Every piece is worked and described by the same hands that ship it.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="label">Last call</span>
+      <h2 class="display">One club. One champion. <em>One left.</em></h2>
+      <div class="price-big">$340</div>
+      <div class="urg">● Only one exists. When it sells, there isn't another.</div>
+      <div class="ctas">
+        <a class="btn" href="https://oldworldhickorygolf.com/products/jack-white-retro-fit-4-wood-hickory-golf">Claim the Jack White 4 wood <span class="arr">→</span></a>
+        <a class="btn ghost" href="#story">Re-read the story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">Old World <span>Hickory</span></div>
+  <p>Playable hickory golf, built by hand in the United States. Vintage clubheads, fresh shafts, honest specs.</p>
+  <p class="fine">Jack White Retro-Fit 4 Wood · Right-handed · 20° · 41½″ · D5 · Hickory Woods</p>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+  if(location.search.indexOf('shot')>-1)document.documentElement.classList.add('shot');
+
+  // sticky buy bar appears after hero
+  const topbar=document.getElementById('topbar');
+  const hero=document.querySelector('.hero');
+  new IntersectionObserver(([e])=>{
+    topbar.classList.toggle('show',!e.isIntersecting);
+  },{threshold:.15}).observe(hero);
+
+  // scroll reveals
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
